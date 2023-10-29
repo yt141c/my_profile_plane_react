@@ -1,0 +1,97 @@
+{
+  "timeline": [
+    {
+      "date": "2019年8月 - 2020年1月",
+      "title": "企業内ポータルシステム開発、インフラ構築、システム運用",
+      "description": "要件定義書作成、基本設計書、詳細設計書、テスト仕様書等のドキュメント作成やポータル記事管理機能の開発（要件定義、テーブル設計から実装、テストまで）、及び既存の記事データから新規システムへのデータ移行を担当。",
+      "tech": {
+        "front": ["JavaScript", "HTML5", "CSS3"],
+        "back": ["PHP7", "MariaDB"],
+        "other": ["CentOS", "jQuery", "IntelliJ", "UML", "Tera Term"]
+      }
+    },
+    {
+      "date": "2020年1月 - 2020年6月",
+      "title": "FuelPHPを使ったSNS自動運用ツール開発",
+      "description": "運用データ管理機能開発（基本設計〜テスト）、顧客側の運用データ管理画面開発 (実装〜テスト)、バッチ機能/データ集計処理（基本設計〜テスト）を担当。",
+      "tech": {
+        "front": ["JavaScript"],
+        "back": ["PHP7", "FuelPHP1.8.1", "Mysql"],
+        "other": [
+          "CentOS",
+          "Vue.js",
+          "jQuery",
+          "npm/gulp",
+          "Git",
+          "github",
+          "torello",
+          "Amazon S3"
+        ]
+      }
+    },
+    {
+      "date": "2020年7月 - 2021年2月",
+      "title": "スキルチェック用WEBサービス新規開発",
+      "description": "技術開発だけでなくサービス開発に関わるほぼすべての業務を担当しました。要件定義、技術調査、デザインプロトタイプ作成、サンプルデータの作成、フロントエンド、サーバーサイド開発全般を担当。",
+      "tech": {
+        "front": ["Javascript", "Vue2.5", "SASS"],
+        "back": ["PHP7.2", "Laravel6.18", "Amazon Aurora(MySQL)"],
+        "other": [
+          "AWS EC2",
+          "Laravel",
+          "npm / webpack",
+          "PhotoShop",
+          "Docker",
+          "Git",
+          "GitHub"
+        ]
+      }
+    },
+    {
+      "date": "2020年12月 - 2021年2月",
+      "title": "医療系メディアサービスのフロント改修",
+      "description": "既存のフロントエンドコードをjQueryからVueに置き換える業務を担当。",
+      "tech": {
+        "front": ["Vue"],
+        "back": ["Ruby on Rails", "MySQL"],
+        "other": ["Git", "GitHub"]
+      }
+    },
+    {
+      "date": "2021年4月 - 2022年6月",
+      "title": "Nuxt.jsを使ったクチコミメディアサービスの開発",
+      "description": "SSRアプリケーションのフロントエンド開発全般を担当。デザイナーやバックエンドエンジニアと連携が多い業務を担当",
+      "tech": {
+        "front": ["Nuxt2系", "Vue.js2系", "JavaScript", "TypeScript"],
+        "back": ["GraphQL"],
+        "other": [
+          "Asana",
+          "Notion",
+          "Github",
+          "AWS S3",
+          "Sketch",
+          "Adobe Photoshop",
+          "Google Analytics"
+        ]
+      }
+    },
+    {
+      "date": "2022年11月 - 2023年2月",
+      "title": "動画制作支援ツールの開発",
+      "description": "Javascriptを使った小規模なツールの開発、要件のヒアリング/実装/テスト/運用サポートを担当。クライアントとの連携を含む要件定義を実施。",
+      "tech": {
+        "front": ["Node.js", "JavaScript"],
+        "other": ["Playwright", "Google スプレッドシート", "Google Drive"]
+      }
+    },
+    {
+      "date": "2023年4月 - 2023年8月",
+      "title": "Nuxt.jsを使ったオンライン教育プラットフォームの開発",
+      "description": "Nuxt.jsを利用したフロントエンド開発全般、運用データ管理画面開発 (実装〜テスト)、バックエンドの一部改修を担当。",
+      "tech": {
+        "front": ["Nuxt2系"],
+        "back": ["Laravel9", "MySQL"]
+      }
+    }
+  ]
+}
