@@ -39,19 +39,19 @@ const Timeline: React.FC = () => {
                 item.tech.front.map((tech: string) => (
                   <Tag tagType={TAG_TYPE_CLASSES.front} key={tech}>
                     {tech}
-                  </Tag> // Tagコンポーネントを利用
+                  </Tag>
                 ))}
               {item.tech.back &&
                 item.tech.back.map((tech: string) => (
                   <Tag tagType={TAG_TYPE_CLASSES.back} key={tech}>
                     {tech}
-                  </Tag> // Tagコンポーネントを利用
+                  </Tag>
                 ))}
               {item.tech.other &&
                 item.tech.other.map((tech: string) => (
                   <Tag tagType={TAG_TYPE_CLASSES.other} key={tech}>
                     {tech}
-                  </Tag> // Tagコンポーネントを利用
+                  </Tag>
                 ))}
             </div>
           </div>
