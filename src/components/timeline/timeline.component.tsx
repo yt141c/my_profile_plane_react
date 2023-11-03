@@ -1,61 +1,35 @@
-import React, { useState } from 'react';
+import { FC, useState } from 'react';
 
 import { TimelineComponent } from './timeline.styles';
+import TimelineItem from '../timeline-item/timeline-item.component';
 
-import Tag, { TAG_TYPE_CLASSES } from '../tag/tag.component';
 import timelineJson from './timelineData.json';
 
-interface Tech {
+export type Tech = {
   front?: string[];
   back?: string[];
   other?: string[];
-}
+};
 
-interface TimelineItem {
+export type TimelineItemType = {
   date: string;
   title: string;
   description: string;
   tech: Tech;
-}
+};
 
-interface TimelineData {
-  timeline: TimelineItem[];
-}
+type TimelineData = {
+  timeline: TimelineItemType[];
+};
 
-const Timeline: React.FC = () => {
+const Timeline: FC = () => {
   const { timeline } = timelineJson as TimelineData;
-  const [timelineData] = useState<TimelineItem[]>(timeline);
+  const [timelineData] = useState<TimelineItemType[]>(timeline);
 
   return (
     <TimelineComponent>
       {timelineData.map((item, index) => (
-        <li key={index}>
-          <p className="timeline-date">{item.date}</p>
-          <div className="timeline-content">
-            <h3>{item.title}</h3>
-            <p>{item.description}</p>
-            <div className="tech-used">
-              {item.tech.front &&
-                item.tech.front.map((tech: string) => (
-                  <Tag tagType={TAG_TYPE_CLASSES.front} key={tech}>
-                    {tech}
-                  </Tag>
-                ))}
-              {item.tech.back &&
-                item.tech.back.map((tech: string) => (
-                  <Tag tagType={TAG_TYPE_CLASSES.back} key={tech}>
-                    {tech}
-                  </Tag>
-                ))}
-              {item.tech.other &&
-                item.tech.other.map((tech: string) => (
-                  <Tag tagType={TAG_TYPE_CLASSES.other} key={tech}>
-                    {tech}
-                  </Tag>
-                ))}
-            </div>
-          </div>
-        </li>
+        <TimelineItem item={item} key={index} />
       ))}
     </TimelineComponent>
   );

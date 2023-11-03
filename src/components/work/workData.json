@@ -1,0 +1,52 @@
+{
+  "works": [
+    {
+      "id": 1,
+      "title": "ディレマス",
+      "description": "ディレマスは動画編集ディレクターになりたい人のためのe-Learningサービスです。Youtubeや企業CMなど多数の現場で活躍している現役のディレクターがコースを作成しています。動画編集者がディレクターとしてのキャリアをスタートできるように具体的で重要なトピックを動画形式で学べるようになっています。",
+      "img": {
+        "imageUrl": "./diremasu.jpg",
+        "imageAlt": "ディレマス"
+      },
+      "skills": {
+        "front": ["React", "Redux", "TypeScript", "Styled-Components", "Jest"],
+        "back": ["Laravel", "Mysql", "Firebase", "Stripe"],
+        "other": ["Git", "Netlify"]
+      },
+      "links": [
+        {
+          "name": "ディレマス",
+          "url": "https://diremasu.com/"
+        },
+        {
+          "name": "Backend",
+          "url": "https://github.com/yt141c/diremasu-api"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "ディレマス",
+      "description": "ディレマスは動画編集ディレクターになりたい人のためのe-Learningサービスです。Youtubeや企業CMなど多数の現場で活躍している現役のディレクターがコースを作成しています。動画編集者がディレクターとしてのキャリアをスタートできるように具体的で重要なトピックを動画形式で学べるようになっています。",
+      "img": {
+        "imageUrl": "./diremasu.jpg",
+        "imageAlt": "ディレマス"
+      },
+      "skills": {
+        "front": ["React", "Redux", "TypeScript", "Styled-Components", "Jest"],
+        "back": ["Laravel", "Mysql", "Firebase", "Stripe"],
+        "other": ["Git", "Netlify"]
+      },
+      "links": [
+        {
+          "name": "ディレマス",
+          "url": "https://diremasu.com/"
+        },
+        {
+          "name": "Backend",
+          "url": "https://github.com/yt141c/diremasu-api"
+        }
+      ]
+    }
+  ]
+}

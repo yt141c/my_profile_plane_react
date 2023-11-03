@@ -5,8 +5,9 @@ import { OpeningComponent } from './opening.styles';
 import { PageContext } from '../../context/page.context';
 
 const PRESSED_KEY_TYPE = 'Enter';
-const SHOWED_STRING = "show141'sProfile();";
+const SHOWED_STRING = 'startScrollToProfile();';
 const TYPING_SPEED = 150;
+const WAITING_TIME_FOR_ENABLE_SCROLL = 1200;
 
 const Opening: React.FC = () => {
   const { state, dispatch } = useContext(PageContext);
@@ -20,7 +21,7 @@ const Opening: React.FC = () => {
       setTimeout(() => {
         dispatch({
           type: 'SET_SHOWED_STRING',
-          payload: char, // pass the new char as a payload
+          payload: char,
         });
       }, letterWaitingTime);
     });
@@ -34,27 +35,32 @@ const Opening: React.FC = () => {
 
   useEffect(() => {
     typewriter(TYPING_SPEED, SHOWED_STRING);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (!isAnimeFinished) return;
+      if (!isAnimeFinished || isPressedEnter) return;
 
       const { key } = event;
-      if (key === PRESSED_KEY_TYPE) {
-        dispatch({ type: 'SET_PRESSED_ENTER', payload: true });
-        console.log('次のページへ');
-      }
-      setTimeout(
-        () => {
-          dispatch({
-            type: 'SET_SCROLL_TO_MAIN_FINISHED',
-            payload: true,
-          });
-        },
 
-        2000
-      );
+      switch (key) {
+        case PRESSED_KEY_TYPE:
+          dispatch({ type: 'SET_PRESSED_ENTER', payload: true });
+          setTimeout(
+            () => {
+              dispatch({
+                type: 'SET_SCROLL_TO_MAIN_FINISHED',
+                payload: true,
+              });
+            },
+
+            WAITING_TIME_FOR_ENABLE_SCROLL
+          );
+          break;
+        default:
+          return;
+      }
     };
 
     window.addEventListener('keydown', handleKeyDown);
@@ -62,7 +68,7 @@ const Opening: React.FC = () => {
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [dispatch, isAnimeFinished]);
+  }, [isAnimeFinished]);
 
   return (
     <Fragment>

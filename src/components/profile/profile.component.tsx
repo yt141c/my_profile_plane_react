@@ -1,3 +1,4 @@
+import { FC } from 'react';
 import {
   ProfileContainer,
   MainInfo,
@@ -9,7 +10,7 @@ import Timeline from '../timeline/timeline.component';
 
 import MyimageSource from '../../assets/my_image.jpeg';
 
-const Profile = () => {
+const Profile: FC = () => {
   return (
     <ProfileContainer>
       <MainInfo>

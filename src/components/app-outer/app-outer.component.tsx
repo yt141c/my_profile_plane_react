@@ -4,13 +4,24 @@ import { disableScroll, enableScroll } from '../../utils/scroll/scroll.utils';
 
 import Preload from '../preload/preload.component';
 import Main from '../main/main.component';
-import { AppWrapperComponent } from './appWrapper.styles';
+import { AppOuterComponent } from './app-outer.styles';
 
-const AppWrapper: FC = () => {
+const DELAY_TIME_FOR_START_SCROLL = 400;
+
+const AppOuter: FC = () => {
   const { state } = useContext(PageContext);
   const { isScrollToMainFinished, isPressedEnter } = state;
-
   const mainElement = useRef<HTMLDivElement>(null);
+
+  const scrollToMain = (refElement: React.RefObject<HTMLDivElement>): void => {
+    disableScroll();
+    setTimeout(() => {
+      mainElement.current?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }, DELAY_TIME_FOR_START_SCROLL);
+  };
 
   useLayoutEffect(() => {
     if (isPressedEnter && isScrollToMainFinished) {
@@ -19,14 +30,7 @@ const AppWrapper: FC = () => {
     }
     if (!isPressedEnter || !mainElement.current) return;
 
-    disableScroll();
-
-    setTimeout(async () => {
-      await mainElement.current?.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      });
-    }, 700);
+    scrollToMain(mainElement);
   }, [isPressedEnter, isScrollToMainFinished]);
 
   return (
@@ -34,12 +38,13 @@ const AppWrapper: FC = () => {
       {!isScrollToMainFinished && (
         <Fragment>
           <Preload />
-          <AppWrapperComponent className={isPressedEnter ? 'visible' : ''} />
+          <AppOuterComponent className={isPressedEnter ? 'visible' : ''} />
         </Fragment>
       )}
       {isPressedEnter && <Main ref={mainElement} />}
+      {/* <Main ref={mainElement} /> */}
     </div>
   );
 };
 
-export default AppWrapper;
+export default AppOuter;

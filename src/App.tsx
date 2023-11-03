@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import './App.css';
 
 import { PageProvider, PageContext } from './context/page.context';
-import AppWrapper from './components/appWrapper/appWrapper.component';
+import AppOuter from './components/app-outer/app-outer.component';
 
 function App() {
   const { state } = useContext(PageContext);
@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="App">
       <PageProvider>
-        <AppWrapper />
+        <AppOuter />
       </PageProvider>
     </div>
   );
