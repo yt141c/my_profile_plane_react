@@ -38,12 +38,8 @@
       },
       "links": [
         {
-          "name": "ディレマス",
-          "url": "https://diremasu.com/"
-        },
-        {
-          "name": "Backend",
-          "url": "https://github.com/yt141c/diremasu-api"
+          "name": "github",
+          "url": "https://github.com/yt141c/my_profile_plane_react"
         }
       ]
     }

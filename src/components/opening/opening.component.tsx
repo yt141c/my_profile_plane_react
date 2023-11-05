@@ -48,6 +48,7 @@ const useAnimeEvent = ({
       window.removeEventListener('keydown', handleKeyDown);
       window.removeEventListener('touchend', handleTouchEnd);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isAnimeFinished, isPressedEnter]);
 };
 

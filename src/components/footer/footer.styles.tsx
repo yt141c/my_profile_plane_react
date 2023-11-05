@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import media from '../../theme/mediaquery/mediaquery.styles';
 
 export const FooterComponent = styled.footer`
   background-color: #282c34;
