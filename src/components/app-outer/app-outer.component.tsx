@@ -4,9 +4,9 @@ import { disableScroll, enableScroll } from '../../utils/scroll/scroll.utils';
 
 import Preload from '../preload/preload.component';
 import Main from '../main/main.component';
-import { AppOuterComponent } from './app-outer.styles';
+import { AppOuterPadding } from './app-outer.styles';
 
-const DELAY_TIME_FOR_START_SCROLL = 400;
+const DELAY_TIME_FOR_START_SCROLL = 600;
 
 const AppOuter: FC = () => {
   const { state } = useContext(PageContext);
@@ -16,16 +16,24 @@ const AppOuter: FC = () => {
   const scrollToMain = (refElement: React.RefObject<HTMLDivElement>): void => {
     disableScroll();
     setTimeout(() => {
-      mainElement.current?.scrollIntoView({
+      refElement.current?.scrollIntoView({
         behavior: 'smooth',
         block: 'start',
       });
     }, DELAY_TIME_FOR_START_SCROLL);
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'auto',
+    });
+  };
+
   useLayoutEffect(() => {
     if (isPressedEnter && isScrollToMainFinished) {
       enableScroll();
+      scrollToTop();
       return;
     }
     if (!isPressedEnter || !mainElement.current) return;
@@ -38,7 +46,7 @@ const AppOuter: FC = () => {
       {!isScrollToMainFinished && (
         <Fragment>
           <Preload />
-          <AppOuterComponent className={isPressedEnter ? 'visible' : ''} />
+          <AppOuterPadding className={isPressedEnter ? 'visible' : ''} />
         </Fragment>
       )}
       {isPressedEnter && <Main ref={mainElement} />}

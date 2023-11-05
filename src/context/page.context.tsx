@@ -18,7 +18,7 @@ type ProviderProps = {
   children: ReactNode;
 };
 
-type PageAction =
+export type PageAction =
   | { type: 'SET_LOADING'; payload: boolean }
   | { type: 'SET_ANIME_FINISHED'; payload: boolean }
   | { type: 'SET_PRESSED_ENTER'; payload: boolean }

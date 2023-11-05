@@ -6,8 +6,8 @@
       "description": "要件定義書作成、基本設計書、詳細設計書、テスト仕様書等のドキュメント作成やポータル記事管理機能の開発（要件定義、テーブル設計から実装、テストまで）、及び既存の記事データから新規システムへのデータ移行を担当。",
       "tech": {
         "front": ["JavaScript", "jQuery", "HTML5", "CSS3"],
-        "back": ["PHP7", "MariaDB"],
-        "other": ["CentOS", "UML", "Tera Term"]
+        "back": ["PHP7", "MariaDB", "CentOS"],
+        "other": ["UML", "Tera Term"]
       }
     },
     {
@@ -16,8 +16,8 @@
       "description": "運用データ管理機能開発（基本設計〜テスト）、顧客側の運用データ管理画面開発 (実装〜テスト)、バッチ機能/データ集計処理（基本設計〜テスト）を担当。",
       "tech": {
         "front": ["JavaScript", "Vue.js", "jQuery", "npm/gulp"],
-        "back": ["PHP7", "FuelPHP1.8.1", "Mysql"],
-        "other": ["CentOS", "Git", "github", "torello", "Amazon S3"]
+        "back": ["PHP7", "FuelPHP1.8", "Mysql", "CentOS"],
+        "other": ["Git", "github", "torello", "Amazon S3"]
       }
     },
     {

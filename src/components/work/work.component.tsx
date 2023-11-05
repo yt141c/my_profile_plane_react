@@ -1,7 +1,9 @@
-import { FC } from 'react';
+import { FC, useRef, useState } from 'react';
+import { useScrollObserver } from '../../utils/scroll-observer/scroll-observer.utils';
 
 import { Skills, SkillsProps } from '../skills/skills.component';
 import { WorkComponent } from './work.styles';
+import Button from '../button/button.component';
 
 export type WorkItem = {
   id: number;
@@ -25,9 +27,26 @@ type WorkProps = {
 
 const Work: FC<WorkProps> = ({ work }) => {
   const { title, description, img, links, skills } = work;
+  const [isInterspected, setIsIntersected] = useState(false);
+  const workRef = useRef<HTMLDivElement>(null);
+
+  const setIntersect = (isIntersecting: boolean) => {
+    if (isIntersecting) {
+      setIsIntersected(true);
+    }
+  };
+
+  useScrollObserver(workRef, setIntersect, {
+    root: null,
+    rootMargin: '-100px',
+    threshold: 0.1,
+  });
 
   return (
-    <WorkComponent>
+    <WorkComponent
+      ref={workRef}
+      className={isInterspected ? 'animate-fade' : ''}
+    >
       <div className="infos">
         <div className="img-container">
           <img className="img" src={img.imageUrl} alt={img.imageAlt} />
@@ -37,10 +56,14 @@ const Work: FC<WorkProps> = ({ work }) => {
         <Skills skills={skills} />
         <div className="links">
           {links.map((link) => {
+            const isGitHub = link.url.includes('github.com');
             return (
-              <a href={link.url} key={link.name} className="link">
-                {link.name}
-              </a>
+              <Button
+                key={link.name}
+                content={link.name}
+                url={link.url}
+                buttonType={isGitHub ? 'github' : 'default'}
+              />
             );
           })}
         </div>

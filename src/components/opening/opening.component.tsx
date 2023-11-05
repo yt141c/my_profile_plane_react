@@ -1,17 +1,60 @@
 // src/components/opening/opening.component.tsx
 
-import React, { useEffect, useContext, Fragment } from 'react';
+import React, { useEffect, useContext, Dispatch, FC } from 'react';
 import { OpeningComponent } from './opening.styles';
-import { PageContext } from '../../context/page.context';
+import { PageContext, PageAction } from '../../context/page.context';
 
 const PRESSED_KEY_TYPE = 'Enter';
 const SHOWED_STRING = 'startScrollToProfile();';
 const TYPING_SPEED = 150;
-const WAITING_TIME_FOR_ENABLE_SCROLL = 1200;
+const WAITING_TIME_FOR_ENABLE_SCROLL = 1400;
 
-const Opening: React.FC = () => {
+const useAnimeEvent = ({
+  isAnimeFinished,
+  isPressedEnter,
+  dispatch,
+}: {
+  isAnimeFinished: boolean;
+  isPressedEnter: boolean;
+  dispatch: Dispatch<PageAction>;
+}) => {
+  const triggerEvent = () => {
+    if (!isAnimeFinished || isPressedEnter) return;
+
+    dispatch({ type: 'SET_PRESSED_ENTER', payload: true });
+    setTimeout(() => {
+      dispatch({
+        type: 'SET_SCROLL_TO_MAIN_FINISHED',
+        payload: true,
+      });
+    }, WAITING_TIME_FOR_ENABLE_SCROLL);
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === PRESSED_KEY_TYPE) {
+        triggerEvent();
+      }
+    };
+
+    const handleTouchEnd = () => {
+      triggerEvent();
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener('touchend', handleTouchEnd);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('touchend', handleTouchEnd);
+    };
+  }, [isAnimeFinished, isPressedEnter]);
+};
+
+const Opening: FC = () => {
   const { state, dispatch } = useContext(PageContext);
   const { isAnimeFinished, isPressedEnter } = state;
+  useAnimeEvent({ isAnimeFinished, isPressedEnter, dispatch });
 
   const typewriter = (typingSpeed: number, strings: string) => {
     const eachStrings = strings.split('');
@@ -38,44 +81,12 @@ const Opening: React.FC = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (!isAnimeFinished || isPressedEnter) return;
-
-      const { key } = event;
-
-      switch (key) {
-        case PRESSED_KEY_TYPE:
-          dispatch({ type: 'SET_PRESSED_ENTER', payload: true });
-          setTimeout(
-            () => {
-              dispatch({
-                type: 'SET_SCROLL_TO_MAIN_FINISHED',
-                payload: true,
-              });
-            },
-
-            WAITING_TIME_FOR_ENABLE_SCROLL
-          );
-          break;
-        default:
-          return;
-      }
-    };
-
-    window.addEventListener('keydown', handleKeyDown);
-
-    return () => {
-      window.removeEventListener('keydown', handleKeyDown);
-    };
-  }, [isAnimeFinished]);
+  useAnimeEvent({ isAnimeFinished, isPressedEnter, dispatch });
 
   return (
-    <Fragment>
-      <OpeningComponent className={isPressedEnter ? 'stop' : ''}>
-        {state.showedString}
-      </OpeningComponent>
-    </Fragment>
+    <OpeningComponent className={isPressedEnter ? 'stop' : ''}>
+      {state.showedString}
+    </OpeningComponent>
   );
 };
 

@@ -7,6 +7,8 @@ import {
   Introduce,
 } from './profile.styles';
 import Timeline from '../timeline/timeline.component';
+import { ReactComponent as MailSvg } from '../../assets/envelope-regular.svg';
+import { ReactComponent as GithubSvg } from '../../assets/github-alt.svg';
 
 import MyimageSource from '../../assets/my_image.jpeg';
 
@@ -19,7 +21,7 @@ const Profile: FC = () => {
         </MyImageContainer>
         <MyNames>
           <h2>Yuta Ishii</h2>
-          <p>フロントエンドエンジニア Webエンジニア</p>
+          <p>フロントエンドエンジニア</p>
         </MyNames>
       </MainInfo>
       <div className="introduce-container">
@@ -40,8 +42,26 @@ const Profile: FC = () => {
           <div className="contact">
             <h3>連絡先</h3>
             <ul>
-              <li>yuta141c@gmail.com</li>
-              <li>github: yt141c</li>
+              <li>
+                <a
+                  href="mailto:yuta141c@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <MailSvg className="svg" />
+                  yuta141c@gmail.com
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https:github.com/yt141c"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <GithubSvg className="svg" />
+                  yt141c
+                </a>
+              </li>
             </ul>
           </div>
         </Introduce>

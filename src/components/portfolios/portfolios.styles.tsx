@@ -1,4 +1,5 @@
-import { styled } from 'styled-components';
+import styled from 'styled-components';
+import media from '../../theme/mediaquery/mediaquery.styles';
 
 export const PortfoliosComponent = styled.div`
   background-color: #fff;
@@ -12,20 +13,18 @@ export const PortfoliosComponent = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    opacity: 0;
-    transform: translateX(-20%);
   }
-  .animate-fade {
-    animation: fadeInLeft 0.8s ease-in-out forwards;
-  }
-  @keyframes fadeInLeft {
-    from {
-      opacity: 0;
-      transform: translateX(-10%);
+
+  ${media.phone`
+    background-color: #fff;
+    padding: 48px 16px;
+    .portfolios {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 32px;
     }
-    to {
-      opacity: 1;
-      transform: translateX(0);
+    .works {
+      display: block;
     }
-  }
+  `}
 `;

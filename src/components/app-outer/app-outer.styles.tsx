@@ -1,7 +1,7 @@
-import { styled } from 'styled-components';
+import styled from 'styled-components';
 
-export const AppOuterComponent = styled.div`
-  height: 100vh;
+export const AppOuterPadding = styled.div`
+  height: 100dvh;
   width: 100%;
   background-color: #eeeeee;
   display: none;

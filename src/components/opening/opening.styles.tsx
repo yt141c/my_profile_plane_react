@@ -1,4 +1,4 @@
-import { styled } from 'styled-components';
+import styled from 'styled-components';
 
 export const OpeningComponent = styled.p`
   font-size: 2rem;

@@ -17,7 +17,7 @@ const mediaquery = (Object.keys(breakPoints) as SizeKey[]).reduce<
   Partial<Media>
 >((acc, label) => {
   acc[label] = (args: CSSProp) => css`
-    @media (max-width: ${breakPoints[label] / 16}em) {
+    @media (max-width: ${breakPoints[label]}px) {
       ${args}
     }
   `;

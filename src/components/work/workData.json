@@ -26,15 +26,14 @@
     },
     {
       "id": 2,
-      "title": "ディレマス",
-      "description": "ディレマスは動画編集ディレクターになりたい人のためのe-Learningサービスです。Youtubeや企業CMなど多数の現場で活躍している現役のディレクターがコースを作成しています。動画編集者がディレクターとしてのキャリアをスタートできるように具体的で重要なトピックを動画形式で学べるようになっています。",
+      "title": "ポートフォリオ with React",
+      "description": "新しくReact.jsを学習する過程でこの個人紹介ページを作成しました。各要素をコンポーネント化してJSONの元データから使い回せるようにしています。また、複数のイベントや状態管理を使ってReact HooksやCustom Hooksも取り入れました。またReactに対してのTypescriptでの型付も行いました。",
       "img": {
         "imageUrl": "./diremasu.jpg",
         "imageAlt": "ディレマス"
       },
       "skills": {
-        "front": ["React", "Redux", "TypeScript", "Styled-Components", "Jest"],
-        "back": ["Laravel", "Mysql", "Firebase", "Stripe"],
+        "front": ["React", "TypeScript", "Styled-Components"],
         "other": ["Git", "Netlify"]
       },
       "links": [
