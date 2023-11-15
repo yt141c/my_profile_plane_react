@@ -20,17 +20,17 @@
         },
         {
           "name": "Backend",
-          "url": "https://github.com/yt141c/diremasu-api"
+          "url": "https://github.com/yt141c/diremasu-next"
         }
       ]
     },
     {
       "id": 2,
-      "title": "ポートフォリオ with React",
+      "title": "ポートフォリオ by React",
       "description": "新しくReact.jsを学習する過程でこの個人紹介ページを作成しました。各要素をコンポーネント化してJSONの元データから使い回せるようにしています。また、複数のイベントや状態管理を使ってReact HooksやCustom Hooksも取り入れました。またReactに対してのTypescriptでの型付も行いました。",
       "img": {
-        "imageUrl": "./diremasu.jpg",
-        "imageAlt": "ディレマス"
+        "imageUrl": "./profile_by_react.png",
+        "imageAlt": "ポートフォリオ by React"
       },
       "skills": {
         "front": ["React", "TypeScript", "Styled-Components"],

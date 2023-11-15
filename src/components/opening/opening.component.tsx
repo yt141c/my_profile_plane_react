@@ -5,7 +5,7 @@ import { OpeningComponent } from './opening.styles';
 import { PageContext, PageAction } from '../../context/page.context';
 
 const PRESSED_KEY_TYPE = 'Enter';
-const SHOWED_STRING = 'startScrollToProfile();';
+const SHOWED_STRING = 'pressEnterOrTap();';
 const TYPING_SPEED = 150;
 const WAITING_TIME_FOR_ENABLE_SCROLL = 1400;
 
