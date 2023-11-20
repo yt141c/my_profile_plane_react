@@ -56,7 +56,7 @@ const Profile: FC = () => {
               </li>
               <li>
                 <a
-                  href="https:github.com/yt141c"
+                  href="https://github.com/yt141c"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
