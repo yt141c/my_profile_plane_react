@@ -1,13 +1,12 @@
-// src/components/opening/opening.component.tsx
-
 import React, { useEffect, useContext, Dispatch, FC } from 'react';
 import { OpeningComponent } from './opening.styles';
 import { PageContext, PageAction } from '../../context/page.context';
 
 const PRESSED_KEY_TYPE = 'Enter';
-const SHOWED_STRING = 'pressEnterOrTap();';
+const SHOWED_STRING = 'showMyProfile();';
 const TYPING_SPEED = 150;
 const WAITING_TIME_FOR_ENABLE_SCROLL = 1400;
+const AUTO_PRESS_DELAY = 1500; // タイプライター完了後の自動エンター押下までの待機時間
 
 const useAnimeEvent = ({
   isAnimeFinished,
@@ -31,6 +30,12 @@ const useAnimeEvent = ({
   };
 
   useEffect(() => {
+    if (isAnimeFinished && !isPressedEnter) {
+      setTimeout(() => {
+        triggerEvent();
+      }, AUTO_PRESS_DELAY);
+    }
+
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === PRESSED_KEY_TYPE) {
         triggerEvent();

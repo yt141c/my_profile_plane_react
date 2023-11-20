@@ -75,6 +75,14 @@
         "front": ["Nuxt2系"],
         "back": ["Laravel9", "MySQL"]
       }
+    },
+    {
+      "date": "2023年10月 - 現在",
+      "title": "Reactの学習",
+      "description": "Reactのプロジェクトにも参画できるように学習を開始しました。実際に自身のポートフォリオサイトやアプリケーションをReactで開発しながらスキルを身に着けています。",
+      "tech": {
+        "front": ["React", "TypeScript", "Next.js"]
+      }
     }
   ]
 }

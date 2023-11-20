@@ -99,6 +99,9 @@ export const Introduce = styled.div`
     margin-bottom: 24px;
     letter-spacing: 0.05em;
     line-height: 1.7;
+    & b {
+      font-weight: bold;
+    }
   }
   li {
     width: auto;
@@ -136,6 +139,9 @@ export const Introduce = styled.div`
       margin-bottom: 24px;
       letter-spacing: 0.05em;
       line-height: 1.7;
+      & b {
+        font-weight: bold;
+      }
     }
     li {
       cursor: pointer;

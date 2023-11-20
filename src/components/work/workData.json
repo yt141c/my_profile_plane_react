@@ -9,9 +9,9 @@
         "imageAlt": "ディレマス"
       },
       "skills": {
-        "front": ["React", "Redux", "TypeScript", "Styled-Components", "Jest"],
-        "back": ["Laravel", "Mysql", "Firebase", "Stripe"],
-        "other": ["Git", "Netlify"]
+        "front": ["React", "Next", "TypeScript", "TailwindCSS", "Jest"],
+        "back": ["Laravel", "Mysql", "Firebase"],
+        "other": ["Git", "Vercel", "fly.io"]
       },
       "links": [
         {
@@ -19,7 +19,7 @@
           "url": "https://diremasu.com/"
         },
         {
-          "name": "Backend",
+          "name": "Frontend",
           "url": "https://github.com/yt141c/diremasu-next"
         }
       ]
