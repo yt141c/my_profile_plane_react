@@ -9,7 +9,7 @@ export const TimelineItemComponent = styled.li`
   transform: translateY(80%);
   .date {
     font-size: 14px;
-    width: 110px;
+    width: 100px;
     line-height: 1.2;
     float: left;
   }
@@ -35,7 +35,7 @@ export const TimelineItemComponent = styled.li`
     height: 12px;
     background: navy;
     position: absolute;
-    left: 106px;
+    left: 100px;
     top: 5px;
     border-radius: 100%;
   }

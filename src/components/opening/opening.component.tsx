@@ -6,7 +6,7 @@ const PRESSED_KEY_TYPE = 'Enter';
 const SHOWED_STRING = 'showMyProfile();';
 const TYPING_SPEED = 150;
 const WAITING_TIME_FOR_ENABLE_SCROLL = 1400;
-const AUTO_PRESS_DELAY = 1500; // タイプライター完了後の自動エンター押下までの待機時間
+const AUTO_PRESS_DELAY = 1100; // タイプライター完了後の自動エンター押下までの待機時間
 
 const useAnimeEvent = ({
   isAnimeFinished,
