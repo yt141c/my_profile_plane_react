@@ -35,7 +35,7 @@ export const TimelineItemComponent = styled.li`
     height: 12px;
     background: navy;
     position: absolute;
-    left: 100px;
+    left: 96px;
     top: 5px;
     border-radius: 100%;
   }
